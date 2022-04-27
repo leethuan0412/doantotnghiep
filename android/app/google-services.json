@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "921817794439",
+    "firebase_url": "https://leducthuanshopfood-default-rtdb.firebaseio.com",
+    "project_id": "leducthuanshopfood",
+    "storage_bucket": "leducthuanshopfood.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921817794439:android:fedb5e835e222a721cf522",
+        "android_client_info": {
+          "package_name": "com.awesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "921817794439-tr4d79mk839b5eflr7do1i4geu0n7hqn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEtvSmh_M5VsHNASaes3y0qd2BVqKGKGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "921817794439-tr4d79mk839b5eflr7do1i4geu0n7hqn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
