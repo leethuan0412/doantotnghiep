@@ -126,6 +126,7 @@ export default function ListUserChatScreen() {
             <View>
               <View style={styles.nameContainer}>
                 <Text style={styles.nameTxt}>{item.name}</Text>
+                <Text style={{marginLeft:15}}>{item.email}</Text>
               </View>
             </View>
             {chats.find(
@@ -162,6 +163,7 @@ export default function ListUserChatScreen() {
               // position: 'absolute',
             }}>
             <Text style={{}}>{item.username}</Text>
+            {/* <Text>{item.email}</Text> */}
           </SafeAreaView>
         )}
       </View>
@@ -170,6 +172,9 @@ export default function ListUserChatScreen() {
 
   return (
     <View style={{flex: 1}}>
+      <View style={{backgroundColor:'#009387',height:50,justifyContent:'center'}}> 
+      <Text style={{fontSize:18,alignSelf:'center',color:'white'}}>Tin nhắn</Text>
+      </View>
        <View
         style={{
           flexDirection: 'row',
@@ -230,7 +235,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   nameContainer: {
-    flexDirection: 'row',
+    // flexDirection: 'row',
     justifyContent: 'space-between',
     width: 270,
   },
@@ -239,6 +244,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#222',
     fontSize: 15,
+    fontWeight:'bold',
   },
   mblTxt: {
     fontWeight: '200',

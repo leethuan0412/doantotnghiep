@@ -79,7 +79,7 @@ export default function CategoryList() {
             />
           </View>
           <View>
-            <Text style={{alignSelf:'center'}}>{item.id}</Text>
+            <Text style={{alignSelf:'center',marginTop:5}}>{item.id}</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -99,7 +99,7 @@ export default function CategoryList() {
           },
           shadowOpacity: 0.29,
           shadowRadius: 4.65,
-          elevation: 7,
+          // elevation: 7,
           padding: 15,
         }}>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -122,7 +122,11 @@ export default function CategoryList() {
           style={{
             flexDirection: 'row',
             height: 45,
+            marginTop:20,
             alignItems: 'center',
+            borderWidth:1,
+            borderColor:'grey',
+            borderRadius:16,
             backgroundColor: '#F5F5F8',
           }}>
           <View style={{padding: 10}}>

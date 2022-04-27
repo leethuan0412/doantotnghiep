@@ -1,6 +1,6 @@
 export default {
   WHITE: '#ffffff',
-  PRIMARY: '#3CB371',
+  PRIMARY: '#009387',
   PRIMARY_FONT: '#2c3e50',
   PRIMARY_ICON: '#2c3e50',
   BACKGROUND: '#f5f6fa',

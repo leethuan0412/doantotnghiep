@@ -224,7 +224,7 @@ export default function ShoppingCarts({route}) {
                 color: 'green',
                 textAlign: 'right',
               }}>
-              {item.products.price}k VNĐ
+              {item.products.price}.000VNĐ
             </Text>
             {/* <Text> Instock</Text> */}
             <View style={{flexDirection: 'row', justifyContent: 'center'}}>
@@ -486,7 +486,7 @@ export default function ShoppingCarts({route}) {
                 textAlign: 'right',
               }}>
                
-              Tổng cộng: {getTotal() - discount}k VNĐ
+              Tổng cộng: {getTotal() - discount}.000VNĐ
             </Text>
             <Button
               mode="outlined"

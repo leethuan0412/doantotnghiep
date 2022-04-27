@@ -134,11 +134,11 @@ export default function ProductStateScreen({route}) {
           </Text>
           {Orders.discount > 0 && (
             <Text style={{color: 'orange', fontWeight: '700'}}>
-              Giảm giá : {Orders.discount}
+              Giảm giá : {Orders.discount}.000VNĐ
             </Text>
           )}
           <Text style={{color: 'red', fontWeight: '700'}}>
-            TỔNG CỘNG :{getTotalOrder() - Orders.discount}${' '}
+            TỔNG CỘNG :{getTotalOrder() - Orders.discount}.000VNĐ{' '}
           </Text>
           <Text style={{color: 'black', fontWeight: '700'}}>
             Người nhận :{Orders.Name}
@@ -198,8 +198,9 @@ export default function ProductStateScreen({route}) {
             height: 40,
             borderRadius: 30,
             alignItems: 'center',
-            width: '100%',
-            backgroundColor: '#00BFFF',
+            alignSelf:'center',
+            width: '50%',
+            backgroundColor: '#009387',
             marginBottom: 3,
           }}>
           <Text style={{color: 'white'}}>Cập nhật trạng thái đơn hàng</Text>
@@ -245,7 +246,7 @@ export default function ProductStateScreen({route}) {
                         Số lượng :{item.quantity}
                       </Text>
                       <Text style={{color: 'black'}}>
-                        Giá : {item.products.price * item.quantity}k VNĐ
+                        Giá : {item.products.price * item.quantity}.000VNĐ
                       </Text>
                     </View>
                   </TouchableOpacity>

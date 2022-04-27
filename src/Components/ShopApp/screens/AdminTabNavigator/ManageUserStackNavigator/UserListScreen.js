@@ -58,7 +58,8 @@ export default function Users() {
             margin: 12,
             paddingHorizontal: 25,
             borderWidth: 1,
-            borderRadius: 23,
+            borderRadius: 16,
+            borderColor:'grey'
           }}
           onChangeText={(text) => {
             setUser(profile.filter((u) => u.name.includes(text)));
@@ -203,7 +204,7 @@ const styles = StyleSheet.create({
   },
   email: {
     fontSize: 14,
-    width: '90%',
+    width: '100%',
     flex: 1,
     textAlign: 'center',
     alignSelf: 'center',
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30,
-    backgroundColor: 'green',
+    backgroundColor: '#009387',
   },
   followButtonText: {
     color: '#FFFFFF',

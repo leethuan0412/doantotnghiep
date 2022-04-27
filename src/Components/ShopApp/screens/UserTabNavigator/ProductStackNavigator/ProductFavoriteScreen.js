@@ -69,7 +69,7 @@ export default function ProductFavorite() {
                       <View style={styles.socialBarSection}>
                         <TouchableOpacity style={styles.socialBarButton}>
                           <Text style={[styles.price, {textAlign: 'center'}]}>
-                            {item.price}k VNĐ
+                            {item.price}.000VNĐ
                           </Text>
                           {/* <Text style={styles.socialBarLabel}>25</Text> */}
                         </TouchableOpacity>

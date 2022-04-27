@@ -129,8 +129,8 @@ const Updateproduct = ({route}) => {
                   style={{alignItems: 'center'}}
                   onPress={() => {
                     ImagePicker.openPicker({
-                      width: 800,
-                      height: 800,
+                      // width: 800,
+                      // height: 800,
                       cropping: true,
                     }).then(async (image) => {
                       // create bucket storage reference to not yet existing image
@@ -286,7 +286,7 @@ const Updateproduct = ({route}) => {
                         height: 48,
                         alignItems: 'center',
                         justifyContent: 'center',
-                        backgroundColor: '#3CB371',
+                        backgroundColor: '#009387',
                         borderRadius:16,
                       }}
                       

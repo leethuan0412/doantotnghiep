@@ -139,7 +139,7 @@ const EditBannerScreen = ({route}) => {
                   <TouchableOpacity
                     activeOpacity={0.5}
                     style={{
-                      backgroundColor: '#009966',
+                      backgroundColor: '#009387',
                       borderRadius: 15,
                       height:40,
                       width:100,
@@ -155,8 +155,8 @@ const EditBannerScreen = ({route}) => {
                     }}
                     onPress={() => {
                       ImagePicker.openPicker({
-                        width: 800,
-                        height: 800,
+                        // width: 800,
+                        // height: 800,
                         cropping: false,
                         // multiple: true,
                         compressImageQuality: 1,
@@ -238,7 +238,7 @@ const EditBannerScreen = ({route}) => {
                       height: 48,
                       alignItems: 'center',
                       justifyContent: 'center',
-                      backgroundColor: '#3CB371',
+                      backgroundColor: '#009387',
                       borderRadius:16
                     }}
                     

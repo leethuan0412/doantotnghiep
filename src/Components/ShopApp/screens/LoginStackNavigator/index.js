@@ -3,13 +3,18 @@ import {View, Text} from 'react-native';
 import SignInScreen from './SignInScreen';
 import RegisterScreen from './RegisterScreen';
 import ForgotPasswordScreen from './ForgotPasswordScreen';
-
+import HomeScreen from '../../modules/auth/components/HomeScreen';
 import {createStackNavigator} from '@react-navigation/stack';
 const Stack = createStackNavigator();
 
 export default function index() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{title: 'HomeScreen', headerShown: false}}
+      />
       <Stack.Screen
         name="SignInScreen"
         component={SignInScreen}

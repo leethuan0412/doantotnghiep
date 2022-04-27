@@ -40,7 +40,8 @@ const ProfileScreen = () => {
                   navigation.navigate('EditProfileScreen', {
                     name: loggedInUser.displayName,
                     imageUrl: loggedInUser.photoURL,
-                    phone: loggedInUser.phone,
+                    // email: loggedInUser.email,
+                    phone:loggedInUser.phone,
                   });
                 }}>
                 <Avatar.Image
@@ -73,26 +74,27 @@ const ProfileScreen = () => {
               marginTop: 24,
               flex: 1,
             }}>
-            <ListItem
-              title="Đơn hàng"
+            <ListItem style={{borderBottomWidth:0.7 ,borderColor:'grey'}}
+              // title="Đơn hàng"
               leftIcon={{
                 type: 'Entypo',
                 name: 'shopping_bag',
                 color: colors.BLACK,
+                // alignItems:'center',
               }}
               // bottomDivider
               chevron={{color: colors.PRIMARY_ICON}}
               onPress={() => {
                 navigation.navigate('ProductOrderScreen');
               }}>
-              <Icon name="shopping-bag" type="shopping_bag" color="#517fa4" />
-              <Text style={{marginHorizontal: -10, marginTop: 5,fontSize:16}}>
+              <Icon name="shopping-bag" type="shopping_bag" color="#517fa4" top={2} />
+              <Text style={{marginHorizontal: -10, marginTop: 5,fontSize:16,}}>
                 Đơn hàng
               </Text>
             </ListItem>
            
-            <ListItem
-              title="Cập nhật thông tin"
+            <ListItem style={{borderBottomWidth:0.7 ,borderColor:'grey'}}
+              // title="Cập nhật thông tin"
               leftIcon={{
                 type: 'material-community',
                 name: 'shopping',
@@ -103,13 +105,13 @@ const ProfileScreen = () => {
               onPress={() => {
                 navigation.navigate('ProductFavoriteScreen');
               }}>
-              <Icon name="favorite" style={{}} size={20} color="red" />
+              <Icon name="favorite" style={{}} size={20} color="red" top={2} />
               <Text style={{marginHorizontal: -10, marginTop: 5,fontSize:16}}>
                 Sản phẩm yêu thích
               </Text>
             </ListItem>
-            <ListItem
-              title="Cập nhật thông tin"
+            <ListItem style={{borderBottomWidth:0.7 ,borderColor:'grey'}}
+              // title="Cập nhật thông tin"
               leftIcon={{
                 type: 'material-community',
                 name: 'shopping',
@@ -120,13 +122,13 @@ const ProfileScreen = () => {
               onPress={() => {
                 navigation.navigate('ProductRateScreen');
               }}>
-              <Icon name="star" type="Entypo" color="orange" />
+              <Icon name="star" type="Entypo" color="orange" top={2} />
               <Text style={{marginHorizontal: -10, marginTop: 5,fontSize:16}}>
                 Đánh giá của tôi
               </Text>
             </ListItem>
-            <ListItem
-              title="Cập nhật thông tin"
+            <ListItem style={{borderBottomWidth:0.7 ,borderColor:'grey'}}
+              // title="Cập nhật thông tin"
               leftIcon={{
                 type: 'material-community',
                 name: 'shopping',
@@ -137,7 +139,7 @@ const ProfileScreen = () => {
               onPress={() => {
                 navigation.navigate('ChangePasswordScreen');
               }}>
-              <Icon name="lock" type="MaterialIcons" color="black" />
+              <Icon name="lock" type="MaterialIcons" color="black" top={2}  />
               <Text style={{marginHorizontal: -10, marginTop: 5,fontSize:16}}>
                 Đổi mật khẩu
               </Text>

@@ -24,13 +24,13 @@ import OneSignal from 'react-native-onesignal';
 import {NumberNotification} from '../../../modules/auth/actions/';
 import Cart from 'react-native-vector-icons/MaterialCommunityIcons';
 import color from '../../../constants/color';
+import * as Animatable from 'react-native-animatable';
 const MainScreen = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const numberBadges = useSelector((e) => e.auth.BadgeNumber);
   const signedInUser = useSelector((state) => state.auth.signedInUser);
   React.useEffect(() => {
-    
     OneSignal.init('5dd9ce2f-0d68-4436-96de-a4e90c42902e', {
       kOSSettingsKeyAutoPrompt: false,
       kOSSettingsKeyInAppLaunchURL: false,
@@ -102,23 +102,6 @@ const PreviousButton = () => {
     </View>
   );
 };
-
-const Dot = () => {
-  return (
-    <View
-      style={{
-        backgroundColor: color.DARK_GRAY,
-        width: 8,
-        height: 8,
-        borderRadius: 4,
-        marginLeft: 3,
-        marginRight: 3,
-        marginTop: -180,
-        marginBottom: 3,
-      }}
-    />
-  );
-};
 function ProductList({data}) {
   const navigation = useNavigation();
   return (
@@ -135,15 +118,18 @@ function ProductList({data}) {
         }}
         style={{
           backgroundColor: 'white',
+          borderWidth:0.5,
           borderRadius: 10,
+          borderColor:'#DDDDDD'
         }}>
         <View
           style={{
             width: '100%',
-            height: 150,
+            height: 140,
             borderTopRightRadius: 10,
             borderTopLeftRadius: 10,
             marginVertical: 5,
+            // backgroundColor:'red'
           }}>
           <FastImage
             source={{
@@ -156,9 +142,9 @@ function ProductList({data}) {
               // borderTopRightRadius: 10,
               // borderTopLeftRadius: 10,
               marginVertical: 5,
-              borderRadius:10
+              borderRadius: 16,
             }}
-            resizeMode={FastImage.resizeMode.contain}
+            resizeMode={FastImage.resizeMode.cover}
           />
         </View>
 
@@ -166,7 +152,12 @@ function ProductList({data}) {
           style={{padding: 10, height: 110, justifyContent: 'space-between'}}>
           <View>
             <Text
-              style={{color: 'black', fontWeight: '700', textAlign: 'center',marginTop:15}}>
+              style={{
+                color: 'black',
+                fontWeight: '700',
+                textAlign: 'center',
+                marginTop: 15,
+              }}>
               {data.name}
             </Text>
             {/* <Text style={{color: '#079992', textAlign: 'center'}}>InStock</Text> */}
@@ -179,7 +170,7 @@ function ProductList({data}) {
             }}>
             <Text
               style={{alignItems: 'center', color: 'black', fontWeight: '700'}}>
-              {data.price}k VNĐ
+              {data.price}.000VNĐ
             </Text>
             <TouchableOpacity
               activeOpacity={0.8}
@@ -237,7 +228,7 @@ const Banner = () => {
           onIndexChanged={(index) => {
             console.log(Banners[index]);
           }}>
-            {/* thanh trượt */}
+          {/* thanh trượt */}
           <Swiper
             activeDotStyle={{backgroundColor: 'white'}}
             // showsButtons={true}
@@ -245,9 +236,9 @@ const Banner = () => {
             autoplay={true}
             // nextButton={<NextButton />}
             // prevButton={<PreviousButton />}
-            >
+          >
             {Banners.map((item, key) => (
-              <BannerList key={key} item={item}/>
+              <BannerList key={key} item={item} />
             ))}
           </Swiper>
         </View>
@@ -269,7 +260,7 @@ const BannerList = ({item}) => {
     </React.Fragment>
   );
 };
-export default function Product({data}) {
+const  Product= () =>{
   const [Products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [categories, setCategories] = React.useState([]);
@@ -328,10 +319,10 @@ export default function Product({data}) {
           activeOpacity={2}
           style={{
             backgroundColor:
-              selectedCategory?.id == item.id ? '#FF6C44' : 'white',
-            width: 146,
-            height: 48,
-            borderRadius: 8,
+              selectedCategory?.id == item.id ? '#009387' : 'white',
+            width: 130,
+            height: 50,
+            borderRadius: 16,
             marginRight: 15,
             ...styles.shadow,
             justifyContent: 'center',
@@ -346,7 +337,7 @@ export default function Product({data}) {
               uri: item.imageUrl,
               priority: FastImage.priority.normal,
             }}
-            style={{width: 30, height: 30,}}
+            style={{width: 30, height: 30,borderRadius:8}}
             resizeMode={FastImage.resizeMode.contain}
           />
           <Text
@@ -361,7 +352,7 @@ export default function Product({data}) {
         </TouchableOpacity>
       );
     };
-// console.log(Products);
+    // console.log(Products);
     return (
       <View style={{paddingHorizontal: 20}}>
         <FlatList
@@ -396,17 +387,34 @@ export default function Product({data}) {
 
       {/* <View style={{flex: 1, justifyContent: 'center'}}>
         <ActivityIndicator />
-    //   </View> */}
+         //   </View> */}
       {/* {searchProduct(Products)} */}
+      <Animatable.View
+        style={{
+          marginLeft:10
+        }}
+        animation="fadeInUp"
+        duration={1000}
+      >
+        <Image
+          source={require('../components/logo.jpg')}
+          style={{height: 50, width: 50, marginLeft: 20, marginTop: 10}}
+          // resizeMode="cover"
+        />
+        <Text style={{fontSize: 25,fontWeight:'bold'}}> Thuan Mart</Text>
+      </Animatable.View>
       <View style={{flexDirection: 'row', marginBottom: -20}}>
         <TextInput
           style={{
             flex: 1,
             height: 40,
             margin: 12,
+            marginLeft:13,
             paddingHorizontal: 25,
-            borderWidth: 1,
+            // borderWidth: 1,
             borderRadius: 16,
+            borderBottomWidth:1,
+            borderColor:'grey',
           }}
           onChangeText={(text) => {
             setProductList(Products.filter((i) => i.name.includes(text)));
@@ -415,7 +423,7 @@ export default function Product({data}) {
           placeholder="Search Product"
         />
         <Icon
-          style={{paddingTop: 24, paddingLeft: 20, position: 'absolute'}}
+          style={{paddingTop: 24, paddingLeft: 20, position: 'absolute',}}
           name="search"
           size={18}
           color={'grey'}
@@ -439,6 +447,7 @@ export default function Product({data}) {
     </SafeAreaView>
   );
 }
+export default Product;
 const styles = StyleSheet.create({
   shadow: {
     shadowColor: '#000',

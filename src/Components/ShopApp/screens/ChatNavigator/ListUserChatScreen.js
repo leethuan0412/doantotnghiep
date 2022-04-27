@@ -130,7 +130,7 @@ export default function ListUserChatScreen() {
 
   return (
     <View style={{flex: 1}}>
-      <View style={{backgroundColor:'#3CB371'}} > 
+      <View style={{backgroundColor:'#009387'}} > 
       <Text style={{fontSize:20,color:'white',alignSelf:'center',justifyContent:'center',padding:10}}>Tin nhắn</Text>
       </View>
       <FlatList

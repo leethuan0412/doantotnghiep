@@ -110,7 +110,7 @@ const CreateCategoryScreen = () => {
                   <TouchableOpacity
                     activeOpacity={0.5}
                     style={{
-                      backgroundColor: '#009966',
+                      backgroundColor: '#009387',
                       borderRadius: 15,
                       height:40,
                       width:100,
@@ -126,8 +126,8 @@ const CreateCategoryScreen = () => {
                     }}
                     onPress={() => {
                       ImagePicker.openPicker({
-                        width: 800,
-                        height: 800,
+                        // width: 800,
+                        // height: 800,
                         cropping: true,
                         // multiple: true,
                         compressImageQuality: 1,
@@ -207,7 +207,7 @@ const CreateCategoryScreen = () => {
                       height: 48,
                       alignItems: 'center',
                       justifyContent: 'center',
-                      backgroundColor: '#3CB371',
+                      backgroundColor: '#009387',
                       borderRadius:16,
                     }}
                    

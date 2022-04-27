@@ -36,7 +36,7 @@ const CongratulationScreen = () => {
       <TouchableHighlight
         activeOpacity={0.8}
         style={[styles.buttonContainer, styles.loginButton]}
-        onPress={() => navigation.navigate('ShoppingCarts')}>
+        onPress={() => navigation.navigate('ProductScreen')}>
         <Text style={styles.buttonText}>Tiếp tục mua hàng</Text>
       </TouchableHighlight>
     </View>
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   loginButton: {
-    backgroundColor: '#3CB371',
+    backgroundColor: '#009387',
   },
   buttonText: {
     color: '#FFFFFF',

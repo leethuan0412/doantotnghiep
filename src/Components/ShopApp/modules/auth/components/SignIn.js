@@ -45,38 +45,30 @@ const SignInSchema = Yup.object().shape({
 
 const SignIn = () => {
   const Touch =
-    Platform.OS === 'ios' ? TouchableOpacity : TouchableWithoutFeedback;
-  // REDUX
+  Platform.OS === 'ios' ? TouchableOpacity : TouchableWithoutFeedback;
   const loading = useSelector((state) => state.auth.loading);
   const signedInUser = useSelector((state) => state.auth);
-  // console.log(signedInUser);
   const [visible, setVisible] = React.useState(false);
   const [isSecureText, setSecureText] = React.useState(true);
 
   const dispatch = useDispatch();
-  // THEMNE
+  
   const paperColor = useTheme().colors;
 
-  // NAVIGATION
+  
   const navigation = useNavigation();
-  // REFS
+ 
   const containerRef = React.useRef(null);
   const logoRef = React.useRef(null);
   const [isSwitchOn, setIsSwitchOn] = React.useState(false);
-  // const onToggleSwitch = () => {
 
-  //   setIsSwitchOn(!isSwitchOn);
-
-  // };
 
   const [loggedInUser, setLoggedInUser] = React.useState(null);
-  // const image = { uri: "https://cdn4.vectorstock.com/i/1000x1000/69/13/japanese-food-on-top-view-wooden-background-vector-31666913.jpg" };
-  // async - await
+
   const storeData = async (value) => {
     try {
       await AsyncStorage.setItem('@LoggedInUser', JSON.stringify(value));
     } catch (e) {
-      // saving error
       // console.log('Save failed: ', e);
     }
   };
@@ -89,7 +81,6 @@ const SignIn = () => {
       }
       return null;
     } catch (e) {
-      // saving error
       // console.log('Get failed: ', e);
     }
   };
@@ -131,7 +122,7 @@ const SignIn = () => {
     });
   };
   React.useEffect(getinfologin, []);
-  // console.log(loggedInUser);
+  console.log(loggedInUser);
   return (
     <View style={{flex: 1,backgroundColor:'white'}}>
       {/* <ImageBackground source={image} resizeMode='cover' style={{flex:1}}> */}
@@ -140,7 +131,7 @@ const SignIn = () => {
       {/* <TouchableOpacity
         activeOpacity={1}
         style={{flex: 1, backgroundColor: colors.WHITE}}
-        // onPress={Keyboard.dismiss}
+        onPress={Keyboard.dismiss}
         > */}
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}
@@ -173,7 +164,7 @@ const SignIn = () => {
                   animation="fadeIn"
                   style={{
                     height: 240,
-                    backgroundColor: '#3CB371',
+                    backgroundColor: '#009387',
                     justifyContent: 'center',
                   }}>
                   <View
@@ -188,21 +179,21 @@ const SignIn = () => {
                      
                       <Image
                         style={{width: 100, height: 80}}
-                        source={{
-                          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT02kb8n3CccNKkE1sIa0Yfnclkd0CK8-wiJg&usqp=CAU',
-                        }}
+                        source={require('../components/logo.jpg')}
                         resizeMode="contain"
                       />
                       <Text
                         style={{
                           color: 'white',
-                          fontWeight: '700',
-                          fontSize: 20,
+                          fontSize: 30,
+                          fontWeight: 'bold',
+                          justifyContent: 'center',
+                          alignItems: 'center',
                         }}>
-                        THUAN MART
+                        Thuan Mart
                       </Text>
                       <View height={4} />
-                      <Text style={{color: 'white', fontWeight: '700'}}>
+                      <Text style={{color: 'white', fontWeight: '700',fontSize:14}}>
                         Uy tín, chất lượng tạo nên thương hiệu
                       </Text>
                       <Text
@@ -257,7 +248,7 @@ const SignIn = () => {
                     }}
                     onChangeText={formik.handleChange('password')}
                     value={formik.values.password}
-                    maxLength={10}
+                    // maxLength={10}
                     // iconName1="eye"
                     // style={{fontSize:15,backgroundColor:null}}
                   />

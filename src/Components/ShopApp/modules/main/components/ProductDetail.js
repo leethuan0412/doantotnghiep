@@ -288,7 +288,7 @@ export default function ProductDetail({data}) {
               </TouchableOpacity>
             </Text>
             <Text style={[styles.price, {paddingRight: 10}]}>
-              {data.price}k VNĐ
+              {data.price}.000VNĐ
             </Text>
 
             <View>

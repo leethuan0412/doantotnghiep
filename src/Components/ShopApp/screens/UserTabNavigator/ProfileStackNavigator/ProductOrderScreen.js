@@ -187,12 +187,12 @@ const ProductOrderScreen = () => {
                   )}
                 </View>
 
-                <Text style={{color: 'black'}}>Giá:{e.products.price}k VNĐ</Text>
+                <Text style={{color: 'black'}}>Giá:{e.products.price}.000VNĐ</Text>
                 <Text style={{color: 'black', fontWeight: '700'}}>
                   Số Lượng: {e.quantity}
                 </Text>
                 <Text style={{color: 'red', fontWeight: '700'}}>
-                  Tiền:{e.products.price * e.quantity}k VNĐ {''}
+                  Tiền:{e.products.price * e.quantity}.000VNĐ {''}
                   {item.discount > 0 && (
                     <Text style={{color: 'black', fontWeight: '700'}}>
                       (giảm giá :{item.discount})
@@ -218,7 +218,7 @@ const ProductOrderScreen = () => {
             borderColor: 'green',
             padding:5,
           }}>
-          Tổng cộng: {getTotalOrder() - item.discount}k VNĐ
+          Tổng cộng: {getTotalOrder() - item.discount}.000VNĐ
         </Text>
 
         <View

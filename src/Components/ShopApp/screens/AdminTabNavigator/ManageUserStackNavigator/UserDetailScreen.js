@@ -92,10 +92,13 @@ export default function Profile({route}) {
           }}
         />
       }>
-      <View style={styles.header}></View>
+      {/* <View style={styles.header}></View> */}
       <Image
         style={styles.avatar}
-        source={{uri: route.params.profile.imageUrl}}
+        source={{
+        uri: route.params.profile.imageUrl
+                    ? route.params.profile.imageUrl
+                    : 'https://www.shareicon.net/data/512x512/2017/01/06/868320_people_512x512.png',}}
       />
       <View style={styles.body}>
         <View style={styles.bodyContent}>
@@ -108,11 +111,11 @@ export default function Profile({route}) {
             <Image
               style={styles.icon}
               source={{
-                uri: 'https://img.icons8.com/color/70/000000/cottage.png',
+                uri: 'https://e7.pngegg.com/pngimages/81/559/png-clipart-shopping-cart-software-computer-icons-shopping-cart-text-retail-thumbnail.png',
               }}
             />
 
-            <Text style={styles.title}>Order</Text>
+            <Text style={styles.title}>Đơn hàng</Text>
             <Text style={styles.number}>{totalOrder.length}</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -129,7 +132,7 @@ export default function Profile({route}) {
                 uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2yKgzCvwzfsTOoUnGSNZAXpLughD6KH4fyA&usqp=CAU',
               }}
             />
-            <Text style={styles.title}>Comment</Text>
+            <Text style={styles.title}>Đánh giá</Text>
             <Text style={styles.number}>{totalComment.length}</Text>
           </TouchableOpacity>
           <TouchableOpacity
@@ -193,7 +196,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     alignSelf: 'center',
     position: 'absolute',
-    marginTop: 130,
+    marginTop: 10,
   },
   name: {
     fontSize: 18,
@@ -207,7 +210,7 @@ const styles = StyleSheet.create({
     marginLeft: 4,
   },
   body: {
-    marginTop: 50,
+    marginTop: 130,
   },
   bodyContent: {
     flex: 1,

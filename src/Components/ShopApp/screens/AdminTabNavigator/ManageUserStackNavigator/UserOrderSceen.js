@@ -11,38 +11,7 @@ import {
   Alert,
   ScrollView,
 } from 'react-native';
-const data = [
-  {
-    id: 1,
-    name: 'Comunity',
-    image: 'https://img.icons8.com/clouds/100/000000/groups.png',
-    count: 124.711,
-  },
-  {
-    id: 2,
-    name: 'Housing',
-    image: 'https://img.icons8.com/color/100/000000/real-estate.png',
-    count: 234.722,
-  },
-  {
-    id: 3,
-    name: 'Jobs',
-    image: 'https://img.icons8.com/color/100/000000/find-matching-job.png',
-    count: 324.723,
-  },
-  {
-    id: 4,
-    name: 'Personal',
-    image: 'https://img.icons8.com/clouds/100/000000/employee-card.png',
-    count: 154.573,
-  },
-  {
-    id: 5,
-    name: 'For sale',
-    image: 'https://img.icons8.com/color/100/000000/land-sales.png',
-    count: 124.678,
-  },
-];
+
 export default function UserOrderSceen({route}) {
   return (
     <View style={styles.container}>
@@ -57,10 +26,11 @@ export default function UserOrderSceen({route}) {
           return (
             <SafeAreaView>
               {item.productOrders.map((e, index) => (
-                <TouchableOpacity
+                <View
                   key={'product' + index}
                   style={styles.card}
-                  onPress={() => {}}>
+                  // onPress={() => {}}
+                  >
                   <Image
                     style={styles.image}
                     source={{uri: e.products.imageUrl[0]}}
@@ -68,8 +38,8 @@ export default function UserOrderSceen({route}) {
                   <View style={styles.cardContent}>
                     <Text style={styles.nameOrder}>{item.Name}</Text>
                     <Text style={styles.name}>{e.products.name}</Text>
-                    <Text style={styles.price}>{e.products.price}k VNĐ</Text>
-                    <Text style={styles.address}>{item.Address}</Text>
+                    <Text style={styles.price}>{e.products.price}.000VNĐ</Text>
+                    <Text style={styles.address}>Địa chỉ:{item.Address}</Text>
                     <View style={styles.followButton}>
                       <Text style={styles.followButtonText}>
                         {item.createdDate.toDate().getDate()}
@@ -81,7 +51,7 @@ export default function UserOrderSceen({route}) {
                       </Text>
                     </View>
                   </View>
-                </TouchableOpacity>
+                </View>
               ))}
             </SafeAreaView>
           );
@@ -102,18 +72,20 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   cardContent: {
-    marginLeft: 20,
+    marginLeft: 60,
+    flex:1,
   },
   image: {
     width: 90,
     height: 90,
     borderWidth: 2,
     borderRadius: 10,
+    alignSelf:'center',
   },
 
   card: {
     marginHorizontal: 8,
-    width: '95%',
+    // width: '95%',
     borderWidth: 1,
     borderColor: 'green',
     marginTop: 20,
@@ -153,7 +125,7 @@ const styles = StyleSheet.create({
   followButton: {
     marginTop: 10,
     height: 35,
-    width: 130,
+    width: 160,
     padding: 10,
     flexDirection: 'row',
     justifyContent: 'center',

@@ -112,8 +112,8 @@ const EditProfileScreen = ({route}) => {
   const uploadAndDowload = () => {};
   const choosePhotoFromLibrary = () => {
     ImagePicker.openPicker({
-      width: 800,
-      height: 800,
+      // width: 800,
+      // height: 800,
       cropping: true,
       // multiple: true,
       compressImageQuality: 1,
@@ -157,26 +157,26 @@ const EditProfileScreen = ({route}) => {
   renderInner = () => (
     <View style={styles.panel}>
       <View style={{alignItems: 'center'}}>
-        <Text style={styles.panelTitle}>Upload Photo</Text>
-        <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
+        <Text style={styles.panelTitle}>Tải ảnh</Text>
+        {/* <Text style={styles.panelSubtitle}>Chọn ảnh</Text> */}
       </View>
       <TouchableOpacity
         activeOpacity={0.8}
         style={styles.panelButton}
         onPress={takePhotoFromCamera}>
-        <Text style={styles.panelButtonTitle}>Take Photo</Text>
+        <Text style={styles.panelButtonTitle}>Chụp ảnh</Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.8}
         style={styles.panelButton}
         onPress={choosePhotoFromLibrary}>
-        <Text style={styles.panelButtonTitle}>Choose From Library</Text>
+        <Text style={styles.panelButtonTitle}>Chọn ảnh từ thư viện</Text>
       </TouchableOpacity>
       <TouchableOpacity
         activeOpacity={0.8}
         style={styles.panelButton}
         onPress={() => this.bs.current.snapTo(1)}>
-        <Text style={styles.panelButtonTitle}>Cancel</Text>
+        <Text style={styles.panelButtonTitle}>Hủy</Text>
       </TouchableOpacity>
     </View>
   );
@@ -307,6 +307,7 @@ const EditProfileScreen = ({route}) => {
                       onChangeText={formik.handleChange('name')}
                       value={formik.values.name}
                     />
+                    
                   </View>
 
                   

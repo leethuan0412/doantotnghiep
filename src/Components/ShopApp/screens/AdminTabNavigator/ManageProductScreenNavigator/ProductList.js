@@ -92,6 +92,9 @@ export default function ProductList() {
           height: 45,
           alignItems: 'center',
           backgroundColor: '#F5F5F8',
+          borderWidth:1,
+          borderRadius:16,
+          borderColor:'grey',
         }}>
         <View style={{padding: 10}}>
           <Arrow name="search1" size={20} color="#898B9A" />
@@ -128,7 +131,7 @@ export default function ProductList() {
                   <View style={styles.boxContent}>
                     <Text style={styles.title}>{item.name}</Text>
                     <Text style={{color: 'red', fontWeight: '700'}}>
-                      {item.price}k VNĐ
+                      {item.price}.000VNĐ
                     </Text>
                     <Text style={styles.description}>{item.description}</Text>
                   </View>
