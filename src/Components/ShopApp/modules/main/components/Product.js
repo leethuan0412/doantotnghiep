@@ -118,9 +118,9 @@ function ProductList({data}) {
         }}
         style={{
           backgroundColor: 'white',
-          borderWidth:0.5,
+          borderWidth: 0.5,
           borderRadius: 10,
-          borderColor:'#DDDDDD'
+          borderColor: '#DDDDDD',
         }}>
         <View
           style={{
@@ -224,7 +224,12 @@ const Banner = () => {
     <View>
       {Banners.length > 0 && (
         <View
-          style={{height: 150}}
+          style={{
+            height: 150,
+            width: 380,
+            alignItems: 'center',
+            alignSelf: 'center',
+          }}
           onIndexChanged={(index) => {
             console.log(Banners[index]);
           }}>
@@ -255,12 +260,12 @@ const BannerList = ({item}) => {
           uri: item.imageUrl,
           priority: FastImage.priority.normal,
         }}
-        resizeMode={FastImage.resizeMode.contain}
+        resizeMode={FastImage.resizeMode.cover}
       />
     </React.Fragment>
   );
 };
-const  Product= () =>{
+const Product = () => {
   const [Products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [categories, setCategories] = React.useState([]);
@@ -337,7 +342,7 @@ const  Product= () =>{
               uri: item.imageUrl,
               priority: FastImage.priority.normal,
             }}
-            style={{width: 30, height: 30,borderRadius:8}}
+            style={{width: 30, height: 30, borderRadius: 8}}
             resizeMode={FastImage.resizeMode.contain}
           />
           <Text
@@ -389,32 +394,36 @@ const  Product= () =>{
         <ActivityIndicator />
          //   </View> */}
       {/* {searchProduct(Products)} */}
-      <Animatable.View
-        style={{
-          marginLeft:10
-        }}
-        animation="fadeInUp"
-        duration={1000}
+      <View
+      style={{flexDirection:'row'}}
       >
-        <Image
-          source={require('../components/logo.jpg')}
-          style={{height: 50, width: 50, marginLeft: 20, marginTop: 10}}
-          // resizeMode="cover"
-        />
-        <Text style={{fontSize: 25,fontWeight:'bold'}}> Thuan Mart</Text>
-      </Animatable.View>
+        <Animatable.View
+          style={{
+            marginLeft: 10,
+          }}
+          animation="fadeInUp"
+          duration={1000}>
+          <Image
+            source={require('../components/logo.jpg')}
+            style={{height: 50, width: 50, marginLeft: 20, marginTop: 10}}
+            // resizeMode="cover"
+          />
+          <Text style={{fontSize: 25, fontWeight: 'bold'}}> Thuan Mart</Text>
+        </Animatable.View>
+        
+      </View>
       <View style={{flexDirection: 'row', marginBottom: -20}}>
         <TextInput
           style={{
             flex: 1,
             height: 40,
             margin: 12,
-            marginLeft:13,
+            marginLeft: 13,
             paddingHorizontal: 25,
             // borderWidth: 1,
             borderRadius: 16,
-            borderBottomWidth:1,
-            borderColor:'grey',
+            borderBottomWidth: 1,
+            borderColor: 'grey',
           }}
           onChangeText={(text) => {
             setProductList(Products.filter((i) => i.name.includes(text)));
@@ -423,11 +432,24 @@ const  Product= () =>{
           placeholder="Search Product"
         />
         <Icon
-          style={{paddingTop: 24, paddingLeft: 20, position: 'absolute',}}
+          style={{paddingTop: 24, paddingLeft: 20, position: 'absolute'}}
           name="search"
           size={18}
           color={'grey'}
         />
+        <Animatable.View
+        style={{
+          // flex:1,
+        }}
+        animation="fadeInLeft"
+        // duration={1000}
+      >
+        <Image
+          source={require('../components/a.png')}
+          style={{height: 40, width: 40, right:20,top:5}}
+          // resizeMode="cover"
+        />
+      </Animatable.View>
       </View>
       {/* selectedCategory ? ProductFilter */}
       {CategoyList()}
@@ -446,7 +468,7 @@ const  Product= () =>{
       )}
     </SafeAreaView>
   );
-}
+};
 export default Product;
 const styles = StyleSheet.create({
   shadow: {

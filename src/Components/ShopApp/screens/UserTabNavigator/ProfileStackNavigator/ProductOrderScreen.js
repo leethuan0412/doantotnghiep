@@ -131,10 +131,11 @@ const ProductOrderScreen = () => {
                   }}
                   resizeMode={FastImage.resizeMode.contain}
                   style={{
-                    width: 100,
-                    height: 100,
+                    width: 80,
+                    height: 80,
                     marginHorizontal: 10,
                     marginBottom: 3,
+                    borderRadius:16,
                   }}
                 />
               </TouchableOpacity>
@@ -195,7 +196,7 @@ const ProductOrderScreen = () => {
                   Tiền:{e.products.price * e.quantity}.000VNĐ {''}
                   {item.discount > 0 && (
                     <Text style={{color: 'black', fontWeight: '700'}}>
-                      (giảm giá :{item.discount})
+                      (giảm giá :{item.discount}.000VNĐ)
                     </Text>
                   )}
                 </Text>

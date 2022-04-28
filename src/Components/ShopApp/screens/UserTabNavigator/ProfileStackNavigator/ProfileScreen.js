@@ -3,6 +3,17 @@ import {View, Text} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Avatar, Button, TouchableRipple} from 'react-native-paper';
+import {
+  useTheme,
+  // Avatar,
+  Title,
+  Caption,
+  Paragraph,
+  Drawer,
+  // Text,
+  // TouchableRipple,
+  Switch,
+} from 'react-native-paper';
 import {ListItem, Icon} from 'react-native-elements';
 import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Container from '../../../components/Container';
@@ -17,7 +28,7 @@ import {useNavigation} from '@react-navigation/native';
 
 const ProfileScreen = () => {
   const navigation = useNavigation();
-
+  const paperTheme = useTheme();
   const loggedInUser = useSelector((state) => state.auth.signedInUser);
   const addressList = useSelector((state) => state.auth.addressOrder);
   const contentNotification = useSelector(
@@ -144,6 +155,10 @@ const ProfileScreen = () => {
                 Đổi mật khẩu
               </Text>
             </ListItem>
+            {/* <View pointerEvents="none">
+                  <Switch value={paperTheme.dark} />
+                 
+                </View> */}
           </ScrollView>
           <View style={{padding: 12}}>
             <Button

@@ -214,7 +214,7 @@ export default function ShoppingCarts({route}) {
             />
           </View>
           <View style={{flex: 2, backgroundColor: 'white'}}>
-            <Text style={{fontWeight: '700', fontSize: 18}}>
+            <Text style={{fontWeight: '700', fontSize: 18,marginLeft:60}}>
               {item.products.name}
             </Text>
             <Text
@@ -454,11 +454,11 @@ export default function ShoppingCarts({route}) {
           }}>
           
           <View>
-            <Text style={{color: 'red'}}>Mã Khuyến mãi</Text>
+            <Text style={{color: 'red'}}>Mã khuyến mãi</Text>
           </View>
 
           <Text style={{color: 'red'}}>
-            {discount > 0 && `Giảm:${discount}k `}
+            {discount > 0 && `Giảm: ${discount}.000VNĐ `}
             <IconRight
               style={{paddingVertical: 5, color: 'black'}}
               name="right"

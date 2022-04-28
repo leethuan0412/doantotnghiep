@@ -141,25 +141,6 @@ export default function ListOrderScreen() {
                         {item.createdDate.toDate().toLocaleTimeString('vi_VN')}
                       </Text>
                     </View>
-
-                    {/* <View style={styles.cardContent}>
-              <Text style={styles.nameOrder}>{item.Name}</Text>
-              <Text style={styles.name}>{e.products.name}</Text>
-              <Text style={styles.price}>{e.products.price}$</Text>
-              <Text style={styles.address}>{item.Address}</Text>
-              <TouchableOpacity
-                style={styles.followButton}
-                onPress={() => this.clickEventListener(item)}>
-                <Text style={styles.followButtonText}>
-                  {item.createdDate.toDate().getMonth()}
-                  {'/'}
-                  {item.createdDate.toDate().getDate()}
-                  {'/'}
-                  {item.createdDate.toDate().getFullYear()}{' '}
-                  {item.createdDate.toDate().toLocaleTimeString('vi_VN')}
-                </Text>
-              </TouchableOpacity>
-            </View> */}
                   </TouchableOpacity>
                 </View>
               )}

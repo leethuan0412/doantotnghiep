@@ -54,14 +54,14 @@ export default function ProductFavorite() {
                   </View>
 
                   <FastImage
-                    style={[styles.cardImage, {borderRadius: 20}]}
+                    style={[styles.cardImage, {borderRadius: 8}]}
                     source={{uri: item.imageUrl[0]}}
                   />
                   <View style={styles.cardFooter}>
                     <View style={styles.socialBarContainer}>
                       <View style={styles.socialBarSection}>
                         <View style={styles.socialBarButton}>
-                          <Text style={[styles.socialBarLabel, styles.buyNow]}>
+                          <Text style={[ styles.buyNow]}>
                             Tìm sản phẩm
                           </Text>
                         </View>
@@ -152,12 +152,14 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   price: {
-    fontSize: 16,
+    fontSize: 13,
     color: 'green',
     marginTop: 5,
   },
   buyNow: {
     color: 'purple',
+    textAlign:'center',
+    fontSize: 13,
   },
   icon: {
     width: 25,
