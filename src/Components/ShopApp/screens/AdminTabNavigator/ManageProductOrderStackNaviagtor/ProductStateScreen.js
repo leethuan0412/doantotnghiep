@@ -88,7 +88,7 @@ export default function ProductStateScreen({route}) {
       thread_id: 1,
       summary_arg_count: 1,
       summary_arg: 'React Native',
-      body: 'Đơn hàng',
+      // body: 'Đơn hàng',
       type: 'privated',
       // createdTime: firestore.Timestamp.now(),
 

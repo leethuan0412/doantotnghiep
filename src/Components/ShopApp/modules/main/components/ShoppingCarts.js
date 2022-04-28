@@ -133,7 +133,7 @@ export default function ShoppingCarts({route}) {
       thread_id: 1,
       summary_arg_count: 1,
       summary_arg: 'React Native',
-      body: 'Đặt hàng ',
+      // body: 'Đặt hàng ',
       type: 'private',
       createdTime: firestore.Timestamp.now(),
       title: 'Thông báo đặt hàng từ ' + route.params.address.name,
