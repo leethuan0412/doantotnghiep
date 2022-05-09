@@ -180,12 +180,22 @@ export default function ProductStateScreen({route}) {
                         ? 'Đơn hàng đã bị hủy'
                         : '',
                     );
-                  } else {
+                  } else if (selectedValue == 'xác nhận')
+                  {
                     SendNotificationToUser(
                       playerIds,
                       selectedValue === 'xác nhận'
-                        ? 'đang giao hàng'
-                        : 'Đã được xác nhận',
+                        ? 'Đã được xác nhận'
+                        : 'Chờ lấy hàng',
+                    );
+                  }
+                  else if (selectedValue == 'Đang giao hàng')
+                  {
+                    SendNotificationToUser(
+                      playerIds,
+                      selectedValue === 'Đang giao hàng'
+                        ? 'Đang được giao'
+                        : 'Đang giao hàng',
                     );
                   }
                 }

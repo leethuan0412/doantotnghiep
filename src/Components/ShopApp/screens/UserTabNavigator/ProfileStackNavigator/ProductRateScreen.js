@@ -99,7 +99,7 @@ export default function Comments({route}) {
                   <View style={styles.content}>
                     <View style={styles.contentHeader}>
                       <Text style={styles.name}>{item.item.Name} </Text>
-                      <Text style={{color: 'black'}}>
+                      <Text style={{color: 'black',}}>
                         {item.item.numberStar}
                         <Icon name="star" color="orange" />
                       </Text>
@@ -126,20 +126,23 @@ export default function Comments({route}) {
                       firestore()
                         .collection('StarRate')
                         .doc(item.item.id)
-                        .update({
-                          comment: '',
-                        })
+                        // .delete()
+                        
+                        .delete()
                         .then(() => {
+                          // update({
+                          //   comment: '',
+                          // })
                           // navigation.navigate('UserDetailScreen');
                           setRefresh(refresh + 1);
                           console.log('comment delete successfully');
                         });
                     }}>
-                    {/* <Icon
-             name="remove"
-             size={25}
-             style={{alignSelf: 'center', color: 'red'}}></Icon> */}
-                  </TouchableOpacity>
+                        <Icon
+                              name="delete"
+                              size={25}
+                              style={{alignSelf: 'center', color: 'red'}}></Icon>
+                      </TouchableOpacity>
                 </TouchableOpacity>
               ) : (
                 <Text style={{}}>bạn chưa đánh giá</Text>

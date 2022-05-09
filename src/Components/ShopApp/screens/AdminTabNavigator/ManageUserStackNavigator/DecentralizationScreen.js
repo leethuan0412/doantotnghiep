@@ -61,8 +61,9 @@ export default function DecentralizationScreen({route}) {
         </Picker>
       </View>
 
-      <Button
-        title="xác nhận"
+      <TouchableOpacity
+        style={{color:'#009387',backgroundColor:'#009387',alignSelf:'center'}}
+        
         onPress={() => {
           firestore()
             .collection('Profiles')
@@ -75,7 +76,9 @@ export default function DecentralizationScreen({route}) {
               setRefresh(refresh + 1);
               setVisible(true);
             });
-        }}></Button>
+        }}>
+          <Text style={{color:'white',fontSize:15,padding:8,justifyContent:'center'}}>Xác nhận </Text>
+        </TouchableOpacity>
       {visible && (
         <View>
           <FancyAlert

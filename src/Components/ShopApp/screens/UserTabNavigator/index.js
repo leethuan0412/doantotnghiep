@@ -35,27 +35,19 @@ const TabNavigator = () => {
   React.useEffect(updateNotification, [numberBadges]);
   // console.log(numberBadges);
 
-  const {colors} = useTheme();
+  // const {colors} = useTheme();
   const addedCartList = useSelector(
     (state) => state.main.shoppingCart.addedCartList,
   );
-
+// console.log(addedCartList,"addedCartList");
   var notificationNumberCart = 0;
   if (signedInUser) {
-    for (var i = 0; i < addedCartList.length; i++) {
+    for (var i = 0; i < addedCartList.length; i++){
       if (addedCartList[i].userid == signedInUser.uid) {
         notificationNumberCart += [addedCartList[i]].length;
       }
     }
   }
-  // var notificationmessage = 0;
-  // if (signedInUser) {
-  //   for (var i = 0; i < addedCartList.length; i++) {
-  //     if (addedCartList[i].userid == signedInUser.uid) {
-  //       notificationmessage += [addedCartList[i]].length;
-  //     }
-  //   }
-  // }
   return (
     <Tab.Navigator shifting={false} barStyle={{backgroundColor: '#ffffff'}}>
       <Tab.Screen

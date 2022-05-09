@@ -33,7 +33,7 @@ export default function Comments({route}) {
           comment.id = documentSnapshot.id;
           data.push(comment);
         });
-          console.log(comments,"oo")
+          
         setComment(data);
         setLoading(false);
       })
@@ -44,7 +44,7 @@ export default function Comments({route}) {
         setLoading(false);
       });
   };
-
+  console.log(comments,"oo")
   React.useEffect(getComment, [refresh]);
 // console.log(item.item.avatarUrl,"kkkkkkk")
   return (
@@ -77,6 +77,15 @@ export default function Comments({route}) {
             <View style={styles.content}>
               <View style={styles.contentHeader}>
                 <Text style={styles.name}>{item.item.Name}</Text>
+                <View style={{flexDirection:'row'}}> 
+                <Text style={styles.name}>{item.item.numberStar}</Text>
+                <Image
+                  style={{height:16,width:16}}
+                  source={{
+                    uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Star_icon_stylized.svg/1077px-Star_icon_stylized.svg.png',
+                  }}
+                />
+                </View>
                 <Text style={styles.time}>
                   {item.item.timeRate.toDate().getDate()}
                   {'/'}

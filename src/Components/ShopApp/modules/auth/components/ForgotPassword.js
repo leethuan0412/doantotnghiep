@@ -10,6 +10,7 @@ import {
   Keyboard,
   KeyboardAvoidingView,
   Platform,
+  Image,
   Text,
   TouchableOpacity,
   TouchableWithoutFeedback,
@@ -123,11 +124,9 @@ const ForgotPassword = () => {
                         alignItems: 'center',
                       }}
                       ref={logoRef}>
-                      <FastImage
+                      <Image
                         style={{width: 100, height: 80}}
-                        source={{
-                          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT02kb8n3CccNKkE1sIa0Yfnclkd0CK8-wiJg&usqp=CAU',
-                        }}
+                        source={require('../components/logo.jpg')}
                         resizeMode="contain"
                       />
                       <Text
